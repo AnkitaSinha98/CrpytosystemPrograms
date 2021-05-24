@@ -35,8 +35,7 @@ public class HMAC {
 		return formatter.toString();
 	}
 
-	public static String HMACc(String data, String key)
-			throws SignatureException, NoSuchAlgorithmException, InvalidKeyException {
+	public static String HMACc(String data, String key) throws SignatureException, NoSuchAlgorithmException, InvalidKeyException {
 		SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "HmacSHA512");
 		Mac mac = Mac.getInstance("HmacSHA512");
 		mac.init(secretKeySpec);
