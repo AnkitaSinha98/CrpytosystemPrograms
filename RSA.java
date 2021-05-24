@@ -15,6 +15,7 @@ public class RSA {
 		System.out.println("Enter 2nd prime number q");
 		q = sc.nextInt();
 
+		//Logic Starts
 		n = p * q;
 		z = (p - 1) * (q - 1);
 		System.out.println("the value of z = " + z);
@@ -35,19 +36,28 @@ public class RSA {
 			}
 		}
 		System.out.println("the value of d = " + d);
+		
+		//mod function (encryption)
 		c = (Math.pow(msg, e)) % n;
+		
 		System.out.println("Encrypted message is : -");
 		System.out.println(c);
+		
 		// converting int value of n to BigInteger
 		BigInteger N = BigInteger.valueOf(n);
+		
 		// converting float value of c to BigInteger
 		BigInteger C = BigDecimal.valueOf(c).toBigInteger();
+		
+		//mod function (decryption)
 		msgback = (C.pow(d)).mod(N);
+		
 		System.out.println("Derypted message is : -");
 		System.out.println(msgback);
 
 	}
 
+	//gcd function
 	static int gcd(int e, int z) {
 		if (e == 0)
 			return z;
