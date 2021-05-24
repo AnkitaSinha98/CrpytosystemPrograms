@@ -7,6 +7,7 @@ import static java.lang.System.out;
 public class Autokey {
 	public static Scanner in = new Scanner(System.in);
 
+	//encrypt
 	private static String encryption(String plainText, String keyPhrase) {
 		String cipherText = "";
 		plainText = plainText.toUpperCase();
@@ -21,6 +22,7 @@ public class Autokey {
 
 	}
 
+	//decrypt
 	private static String decryption(String cipherText, String keyPhrase) {
 		String plainText = "";
 		cipherText = cipherText.toUpperCase();
@@ -37,10 +39,12 @@ public class Autokey {
 		return plainText;
 	}
 
+	//main function switch used
 	public static void main(String[] args) {
 		out.println("Press 1 to encrypt a message and Press 2 to decrypt a message.");
 		int command = in.nextInt();
 		in.nextLine();
+		
 		switch (command) {
 		case 1:
 			out.println("Please enter your message");
