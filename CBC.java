@@ -18,6 +18,7 @@ public class CBC {
     	
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(128);
+        
         // Generate Key
         SecretKey key = keyGenerator.generateKey();
 
