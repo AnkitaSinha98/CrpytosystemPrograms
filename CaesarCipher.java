@@ -3,6 +3,9 @@ import java.util.*;
 
 public class CaesarCipher {
 	public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+	
+
+    //Encrpyt	
     public static String encrypt(String plainText, int shiftKey)
     {
         plainText = plainText.toLowerCase();
@@ -16,6 +19,8 @@ public class CaesarCipher {
         }
         return cipherText;
     }
+	
+    //Decrypt	
     public static String decrypt(String cipherText, int shiftKey)
     {
         cipherText = cipherText.toLowerCase();
@@ -33,6 +38,8 @@ public class CaesarCipher {
         }
         return plainText;
     }
+
+    //Main Function	
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
