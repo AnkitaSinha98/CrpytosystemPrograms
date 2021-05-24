@@ -36,6 +36,7 @@ public class SimplifiedDES {
 		for (int i = 0; i < l.length; i++) {
 			l[i] = key[i];
 		}
+		
 		System.out.print("\nLeft bit is : ");
 		for (int i = 0; i < r.length; i++) {
 			System.out.print(" " + l[i]);
@@ -45,6 +46,7 @@ public class SimplifiedDES {
 		for (int j = 0; j < r.length; j++) {
 			r[j] = key[++length];
 		}
+		
 		System.out.print("\nRight bit is : ");
 		for (int j = 0; j < r.length; j++) {
 			System.out.print(" " + r[j]);
@@ -60,6 +62,7 @@ public class SimplifiedDES {
 			}
 			l[k] = first;
 		}
+		
 		System.out.print("\nShifted left bits towards left : ");
 
 		for (int i = 0; i < r.length; i++) {
@@ -91,6 +94,7 @@ public class SimplifiedDES {
 		for (int j = 0; j < r.length; j++) {
 			key1[++length1]=r[j];
 		}
+		
 		System.out.print("\nBefore P8 Permutation, The result is as follows :");
 
 		for (int i = 0; i < key1.length; i++) {
@@ -110,6 +114,7 @@ public class SimplifiedDES {
 		for (int i = 0; i < key1.length-2; i++) {
 			System.out.print(" "+key1[i]);
 		}
+		
 		System.out.print("\nKey K1:");
 		for (int i = 0; i < key1.length-2; i++) {
 			System.out.print(" "+key1[i]);
