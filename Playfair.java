@@ -3,6 +3,7 @@ import java.util.*;
 	  
 public	class Playfair {
 	
+	//Main Function
 	public static void main(String[] args)
 	  {
 	    Scanner sc = new Scanner(System.in);
@@ -18,14 +19,17 @@ public	class Playfair {
 	    System.out.println("Decrypted Text "+ decryptedText);
 	    
 	  }
+	
 	  public String getKey()
 	  {
 		 Scanner sc = new Scanner(System.in); 
 		System.out.println("Enter the key");
 		String key = sc.nextLine();
-	    key = key.toUpperCase();
-	    int l=key.length();
+		  
+	        key = key.toUpperCase();
+	        int l=key.length();
 		int n=0; 
+		  
 		for(int i=0; i<l-1; i++)
 		{
 		    char ch=key.charAt(i);
