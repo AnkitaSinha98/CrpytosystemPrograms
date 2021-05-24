@@ -49,11 +49,9 @@ public class AffineCipher
        
         System.out.println("Message is :" + message);
        
-        System.out.println("Encrypted Message is : "
-                + encryptionMessage(message));
+        System.out.println("Encrypted Message is : " + encryptionMessage(message));
         
-        System.out.println("Decrypted Message is: "
-                + decryptionMessage(encryptionMessage(message)));
+        System.out.println("Decrypted Message is: " + decryptionMessage(encryptionMessage(message)));
         sc.close();
     }
 }
