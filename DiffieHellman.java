@@ -18,10 +18,14 @@ class DiffieHellman {
 		System.out.println("select 2nd secret number for 2nd person:");
 		int b = sc.nextInt();
 		
+		//x = G^a mod P for key genration
 		int A = (int) Math.pow(g, a) % p;
 		int B = (int) Math.pow(g, b) % p;
 		
+		//k_a = y^a mod P for secret key
 		int S_A = (int) Math.pow(B, a) % p;
+		
+		//k_b = x^b mod P for secret key
 		int S_B = (int) Math.pow(A, b) % p;
 		
 		if (S_A == S_B) {
