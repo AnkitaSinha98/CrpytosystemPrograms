@@ -41,6 +41,7 @@ public class PlayfairCipher{
 		return parse;
 	}
 
+	//Matrix
 	private String[][] cipherTable(String key) {    
 		String[][] playfairTable = new String[5][5];
 		String keyString = key + "ABCDEFGHIKLMNOPQRSTUVWXYZ";
@@ -152,6 +153,7 @@ public class PlayfairCipher{
 		return pt;
 	}
  
+	//Prints Matrix
 	private void keyTable(String[][] printTable) {
 		System.out.println("Matrix: ");
 		System.out.println(); 
