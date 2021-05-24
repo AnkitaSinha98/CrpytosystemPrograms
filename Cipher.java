@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 public class Cipher {
 
+	//HMAC Hash Generate
 	static String hmac(String message, String Key) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+		
+		//pad
 		String pad = "36";
 		pad = new String(new char[64]).replace("\0", pad);
 		BigInteger ipad = new BigInteger(pad, 16);
@@ -30,6 +33,7 @@ public class Cipher {
 			}
 		}
 
+		//XOR Operation
 		int len = Key.length();
 		BigInteger key = new BigInteger(Key, 2);
 		String S = key.xor(ipad).toString(2);
@@ -53,6 +57,7 @@ public class Cipher {
 
 		message = S + message;
 
+		//Hash function
 		MessageDigest digest = MessageDigest.getInstance("SHA-256");
 		digest.reset();
 		digest.update(message.getBytes("utf8"));
@@ -74,8 +79,8 @@ public class Cipher {
 		return new BigInteger(1, digest2.digest()).toString(16);
 	}
 
-	public static void main(String[] args)
-			throws NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
+	//Main Function
+	public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the plain text: ");
 		String message = sc.next();
