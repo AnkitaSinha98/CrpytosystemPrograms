@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class OTPCipher 
 {
+	//Main Function
 	public static void main(String[] args) 
 	{
 		
@@ -21,6 +22,8 @@ public class OTPCipher
 			System.out.println("Decrypted : " + OTPDecryption(enc, key));
 		}
 	}
+	
+	//Random Class (Ulit.random used for the process)
 	public static String RandomAlpha(int len) 
 	{
 		Random r = new Random();
@@ -29,6 +32,8 @@ public class OTPCipher
 			key = key + (char) (r.nextInt(26) + 'A');
 		return key;
 	}
+	
+	//Encrypt
 	public static String OTPEncryption(String text, String key) 
 	{
 		String alphaU = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -63,6 +68,8 @@ public class OTPCipher
 		}
 		return sb;
 	}
+	
+	//Decrypt
 	public static String OTPDecryption(String text, String key) 
 	{
 		String alphaU = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
