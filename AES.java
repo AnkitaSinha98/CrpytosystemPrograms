@@ -19,10 +19,13 @@ public class AES {
 		String skey = null;
 		String clearText = null;
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("\nEnter the secret key - ");
 		skey=sc.next();
+		
 		System.out.println("\nEnter the clear text - ");
 		clearText=sc.next();
+		
 		String encrypt = AES.encrypt(clearText, skey);
 		String decrypt = AES.decrypt(encrypt, skey);
 
