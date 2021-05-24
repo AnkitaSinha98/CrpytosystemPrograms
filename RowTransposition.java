@@ -11,6 +11,7 @@ public class RowTransposition{
 	char[][] matrix;
 	int noRows, noCols;
 
+	//Matrix Logic
 	public void setMatrix(String msg, String key) {
 		int rmdr;
 		noCols = key.length();
@@ -34,6 +35,7 @@ public class RowTransposition{
 
 	}
 
+	//encrypt
 	public String encrypt(String msg, String key) {
 		setMatrix(msg, key);
 		String enc = "";
@@ -55,6 +57,7 @@ public class RowTransposition{
 		return enc;
 	}
 
+	//decrypt
 	public void decrypt(String msg, String key) {
 		String part, dec = "";
 		int c = 0;
@@ -82,13 +85,15 @@ public class RowTransposition{
 	}
 
 	public void intro() throws IOException {
-		System.out.println("\t ROW TRANSPOSITION CIPHER");
+		System.out.println("\t ---------------------------------ROW TRANSPOSITION CIPHER---------------------------------");
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.println("Enter the message: ");
 		String str = in.readLine();
 		String message = str.replace(" ", "").toLowerCase();
+		
 		System.out.println(message + " : " + message.length());
+		
 		System.out.println("Enter the key: ");
 		String key = in.readLine();
 		key = key.toLowerCase();
