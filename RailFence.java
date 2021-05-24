@@ -4,6 +4,7 @@ import java.util.*;
 class RailFenceBasic {
 	int depth;
 
+	//encryption
 	String Encryption(String plainText, int depth) throws Exception {
 		int r = depth, len = plainText.length();
 		int c = len / depth;
@@ -28,6 +29,7 @@ class RailFenceBasic {
 		return cipherText;
 	}
 
+	//decryption
 	String Decryption(String cipherText, int depth) throws Exception {
 		int r = depth, len = cipherText.length();
 		int c = len / depth;
@@ -52,6 +54,8 @@ class RailFenceBasic {
 }
 
 public class RailFence {
+	
+	//Main Function
 	public static void main(String args[]) throws Exception {
 		RailFenceBasic rf = new RailFenceBasic();
 		try (Scanner scn = new Scanner(System.in)) {
@@ -62,6 +66,7 @@ public class RailFence {
 			System.out.println("Enter plain text:");
 			plainText = scn.nextLine();
 
+			//Integer input
 			System.out.println("Enter depth for Encryption:");
 			depth = scn.nextInt();
 
