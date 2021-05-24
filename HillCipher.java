@@ -195,6 +195,7 @@ public class HillCipher {
 		HillCipher obj = new HillCipher();
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		int choice;
+		
 		System.out.println("Menu:\n1: Encryption\n2: Decryption");
 		choice = Integer.parseInt(in.readLine());
 		
