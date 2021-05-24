@@ -160,7 +160,7 @@ public class CAT3 {
 				A = t;
 			}
 			for (int b = 20; b <= 39; b++) {
-				t = leftrotate(A, 5) + ((A & B) | (B & C) | (C & D)) + E + intArray[b] + TABLE_T[i]; //f2(A,B,C,D) = (A AND B) OR (B AND C)  OR (C AND D)
+				t = leftrotate(A, 5) + ((A & B) | (B & C) | (C & D)) + E + intArray[b] + TABLE_T[i]; // f2(A,B,C,D) = (A AND B) OR (B AND C)  OR (C AND D)
 				E = D;
 				D = C;
 				C = leftrotate(B, 30);
@@ -176,7 +176,7 @@ public class CAT3 {
 				A = t;
 			}
 			for (int d = 60; d <= 79; d++) {
-				t = leftrotate(A, 5) + (A ^ B ^ C ^ D) + E + intArray[d] + TABLE_T[i]; // A XOR B XOR C XOR D
+				t = leftrotate(A, 5) + (A ^ B ^ C ^ D) + E + intArray[d] + TABLE_T[i]; // f4(A,B,C,D) = A XOR B XOR C XOR D 
 				E = D;
 				D = C;
 				C = leftrotate(B, 30);
