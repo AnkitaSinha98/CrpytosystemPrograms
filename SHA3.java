@@ -6,7 +6,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class SHA3 {
-
 	public static void main(String args[]) throws NoSuchAlgorithmException {
 		String clearText = null;
 		String hashvalue = null;
@@ -25,6 +24,7 @@ public class SHA3 {
 		catch (NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
 		}
+		
 		System.out.println("The hashvalue is: " + hashvalue);
 	}
 }
