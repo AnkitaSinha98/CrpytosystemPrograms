@@ -13,6 +13,7 @@ class RowTranspositionCipher{
 		return clist.indexOf(t);
 	}
 
+	//encrypt
 	public void encrypt(String s, int[] key, int key_l){
 		int l=s.length();
 		int cols=key_l,rows;
@@ -48,6 +49,8 @@ class RowTranspositionCipher{
 
 		}
 	}
+
+	//decrpyt
 	public void decrypt(String s, int[] key, int key_l){
 		int l=s.length();
 		char a[]=s.toCharArray();
