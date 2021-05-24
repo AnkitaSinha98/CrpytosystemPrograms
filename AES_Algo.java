@@ -9,9 +9,6 @@ import java.security.SecureRandom;
 
 public class AES_Algo {
 
-
-	
-
 		private static int Nb, Nk, Nr;
 		private static byte[][] w;
 
@@ -364,12 +361,12 @@ public class AES_Algo {
 				System.out.println("Enter the key : ");
 				String key  = sc.next();
 				
-				//System.out.println("ECB");
-				//String message = "BhavsarRutvikAES";
-
+				System.out.println("AES/ECB/PKCS5Padding");
+				
+				//ECB Mode
+				
 				byte[] m = message.getBytes();
 
-				//String key = "thisiscryptogpraphy";
 				byte[] k = key.getBytes();
 
 				byte[] cipher = encrypt(m, k);
@@ -377,19 +374,22 @@ public class AES_Algo {
 				byte[] decipher = decrypt(cipher, k);
 				byte[] msgtxt = Base64.getEncoder().encode(decipher);
 
-//				System.out.println("\nEnrypted message is below.");
-//				for (int i = 0; i < msgtxt.length; i++) {
-//
-//					System.out.print((char) msgtxt[i]);
-//
-//				}
-//				System.out.println("\n\nDecrypted message is below.");
-//				for (int i = 0; i < decipher.length; i++) {
-//
-//					System.out.print((char) decipher[i]);
-//				}
+				System.out.println("\nEnrypted message is below.");
+				for (int i = 0; i < msgtxt.length; i++) {
+
+					System.out.print((char) msgtxt[i]);
+
+				}
+				System.out.println("\n\nDecrypted message is below.");
+				for (int i = 0; i < decipher.length; i++) {
+
+					System.out.print((char) decipher[i]);
+				}
 				
-				System.out.println("\n\nCBC");
+				System.out.println("\n\nAES/CBC/PKCS5Padding");
+				
+				//CBC Mode
+				
 				KeyGenerator cbckey = KeyGenerator.getInstance("AES");
 				cbckey.init(128);
 				SecretKey key_s = cbckey.generateKey();
