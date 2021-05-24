@@ -82,7 +82,8 @@ public class playfaircat {
 		    char[][] keyMatrix = makingMatrix(key);
 		    String modified_plainText = "";
 		    String randomCharacter = "Q";
-		    for(int i=0; i<plainText.length(); i++)
+		    
+	            for(int i=0; i<plainText.length(); i++)
 		    {
 		      if(plainText.charAt(i)>=65 && plainText.charAt(i)<=91)
 		      {
@@ -101,6 +102,7 @@ public class playfaircat {
 		      modified_plainText = modified_plainText.concat(randomCharacter);
 		    }
 		    String cryptedText = "";
+			  
 		    for(int i=0; i<modified_plainText.length()-1; i+=2)
 		    {
 		      int location1 = findCharInMatrix(modified_plainText.charAt(i), keyMatrix);
@@ -126,6 +128,7 @@ public class playfaircat {
 		    }
 		    return cryptedText;
 		  }
+	
 		  private String Decryption(String cryptedText, String key)
 		  {
 		    char[][] keyMatrix = makingMatrix(key);
@@ -158,6 +161,7 @@ public class playfaircat {
 		      realText = realText.substring(0, realText.length()-1);
 		    }
 		    String originalText = "";
+			  
 		    for(int i=0; i<realText.length(); i++)
 		    {
 		      if(realText.charAt(i)!='Q')
