@@ -10,6 +10,7 @@ import java.security.Signature;
 import java.util.Scanner;
 
 public class DSA { 
+    //DSA Program for verrifying and hash generation
     public static String getMd5(String input) 
     { 
         try {
