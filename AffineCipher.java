@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class AffineCipher
 {
+    //encrypt
     public static String encryptionMessage(String Msg)
     {
         String CTxt = "";
@@ -15,6 +16,7 @@ public class AffineCipher
         return CTxt;
     }
  
+    //decrypt
     public static String decryptionMessage(String CTxt)
     {
         String Msg = "";
@@ -38,14 +40,18 @@ public class AffineCipher
         return Msg;
     }
  
+    //main function
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the message: ");
         String message = sc.next();
+       
         System.out.println("Message is :" + message);
+       
         System.out.println("Encrypted Message is : "
                 + encryptionMessage(message));
+        
         System.out.println("Decrypted Message is: "
                 + decryptionMessage(encryptionMessage(message)));
         sc.close();
