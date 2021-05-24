@@ -8,28 +8,33 @@ public class MD5
     private static final int   INIT_B     = (int) 0xEFCDAB89L;
     private static final int   INIT_C     = (int) 0x98BADCFEL;
     private static final int   INIT_D     = 0x10325476;
-    private static final int[] SHIFT_AMTS = { 7, 12, 17, 22, 5, 9, 14, 20, 4,
-            11, 16, 23, 6, 10, 15, 21    };
-    private static final int[] TABLE_T    = new int[64];
+    private static final int[] SHIFT_AMTS = { 7, 12, 17, 22, 5, 9, 14, 20, 4, 11, 16, 23, 6, 10, 15, 21    };
+	
+    private static final int[] TABLE_T    = new int[64];  //64 bit
     static
     {
         for (int i = 0; i < 64; i++)
             TABLE_T[i] = (int) (long) ((1L << 32) * Math.abs(Math.sin(i + 1)));
     }
  
+    //MD5 Hash Generating
     public static byte[] computeMD5(byte[] message)
     {
         int messageLenBytes = message.length;
         int numBlocks = ((messageLenBytes + 8) >>> 6) + 1;
         int totalLen = numBlocks << 6;
+	 
+	//pad    
         byte[] paddingBytes = new byte[totalLen - messageLenBytes];
         paddingBytes[0] = (byte) 0x80;
+	    
         long messageLenBits = (long) messageLenBytes << 3;
         for (int i = 0; i < 8; i++)
         {
             paddingBytes[paddingBytes.length - 8 + i] = (byte) messageLenBits;
             messageLenBits >>>= 8;
         }
+	//4 hashs     
         int a = INIT_A;
         int b = INIT_B;
         int c = INIT_C;
@@ -44,6 +49,8 @@ public class MD5
             int originalB = b;
             int originalC = c;
             int originalD = d;
+	    
+	    //Functions 	
             for (int j = 0; j < 64; j++)
             {
                 int div16 = j >>> 4;
@@ -67,6 +74,8 @@ public class MD5
                         bufferIndex = (bufferIndex * 7) & 0x0F;
                         break;
                 }
+		    
+		//Computing all the values together    
                 int temp = b  + Integer.rotateLeft(a + f + buffer[bufferIndex] + TABLE_T[j],  SHIFT_AMTS[(div16 << 2) | (j & 3)]);
                 a = d;
                 d = c;
@@ -78,6 +87,7 @@ public class MD5
             c += originalC;
             d += originalD;
         }
+	    
         byte[] md5 = new byte[16];
         int count = 0;
         for (int i = 0; i < 4; i++)
@@ -92,6 +102,7 @@ public class MD5
         return md5;
     }
  
+    //computing MD5 to HexString	
     public static String toHexString(byte[] b)
     {
         StringBuilder sb = new StringBuilder();
@@ -102,6 +113,7 @@ public class MD5
         return sb.toString();
     }
  
+    //Main Function (generating MD5 hash for 4 Plain texts)	
     public static void main(String[] args)
     {
     	try (Scanner sc = new Scanner(System.in)) {
