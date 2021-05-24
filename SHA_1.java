@@ -126,7 +126,7 @@ public class SHA_1 {
 
 	}
 
-	//instance variables
+	//instance variables (static) 
 	private static int h1 = 0x67452301;
 	private static int h2 = 0xEFCDAB89;
 	private static int h3 = 0x98BADCFE;
